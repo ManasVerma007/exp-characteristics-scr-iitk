@@ -9,3 +9,6 @@ In the above diagram, Anode and Cathode terminals A & K are connected to variabl
                                                                                                      
 A typical V-I Characteristics of SCR is shown below
 
+<img src ="images/Screenshot_20230209_042639.png" width="400" hight="400">
+
+
