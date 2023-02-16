@@ -1,1 +1,1 @@
-To plot V-I characteristics of SCR.
+## Plot V-I characteristics of SCR.
