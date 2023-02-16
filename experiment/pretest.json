@@ -2,7 +2,7 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "Choose the false Statment",
+      "question": "1. Choose the false Statment",
       "answers": {
         "a": "SCR is a bidirectional device",
         "b": "SCR is a controlled device",
@@ -19,7 +19,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": ". In the SCR structure the gate terminal is located",
+      "question": "2. In the SCR structure the gate terminal is located",
       "answers": {
         "a": "near the anode terminal",
         "b": "near the cathode terminal",
@@ -36,7 +36,7 @@
       "difficulty": "beginner"
     },
      {
-      "question": "The static V-I curve for the SCR is plotted for ",
+      "question": "3. The static V-I curve for the SCR is plotted for ",
       "answers": {
         "a": "Ia (anode current) vs Ig (gate current), Va (anode – cathode voltage) as a parameter",
         "b": "	Ia vs Va with Ig as a parameter",
