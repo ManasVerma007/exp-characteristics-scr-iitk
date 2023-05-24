@@ -16,19 +16,12 @@
     <div id="mySidepanel" class="sidepanel">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <ul id="lists">
-            <h2>Procedure to Study VI Characteristics of SCR</h2>
-            <li>Step 1: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro fuga, voluptatibus a quisquam
-                optio eos nemo dolores doloremque accusantium eaque iure? Qui ab voluptatum quis modi assumenda, porro
-                repellendus tempora?</li>
-            <li>Step 2: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet nisi minima, totam laborum
-                cupiditate facilis dolor iure unde incidunt ad voluptate vero est. Aliquam officiis dignissimos, dicta
-                numquam consectetur totam!</li>
-            <li>Step 3: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus asperiores accusantium
-                voluptatem sint aspernatur molestias dolore voluptate doloremque consectetur. Accusantium totam, quas
-                commodi ipsa voluptatem dolore hic animi obcaecati. Reiciendis!</li>
-            <li>Step 4: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, commodi consectetur?
-                Exercitationem rerum, fuga harum adipisci iure maxime reprehenderit blanditiis cum ratione dolores aut
-                voluptate quibusdam eum totam in. Et?</li>
+            <h2>Procedure to Perform the Experiment.</h2>
+            <li>Step 1: Select the Mode the select menu.</li>
+            <li>Step 2: Complete the Connections using the input section in each mode.</li>
+            <li>Step 3: Turn on the power and vary the sliders to get the readings in ammeter and Voltmeter.</li>
+            <li>Step 4: Find the breakover voltage and fill the table. </li>
+            <li>Step 5: Note down the table or print the current page. </li>
         </ul>
     </div>
     <button class="openbtn" onclick="openNav()">☰ Open Procedure</button>
@@ -46,8 +39,28 @@
                 <object id="svg-object" type="image/svg+xml" data="./images/SCR2.0 img 0.svg" id="svg-object"></object>
             </div>
             <div id="inputsec0" class="inputo">
+                <h3>Apparatus Used</h3>
                 <ul>
-                    <li>Lorem ipsum dolor sit amet.
+                    <li>
+                        HDTC Battery
+                    </li>
+                    <li>
+                        Isolated Regulated Voltage
+                    </li>
+                    <li>
+                        Voltmeter
+                    </li>
+                    <li>
+                        Ammeter
+                    </li>
+                    <li>
+                        Variable Resistance
+                    </li>
+                    <li>
+                        Load (Bulb)
+                    </li>
+                    <li>
+                        SCR
                     </li>
                 </ul>
             </div>
@@ -230,8 +243,6 @@
 
     <script>
 
-
-
         function handleImageSelect(event) {
             const selectedValue = event.target.value;
             const imageDisplay = document.getElementById('svg-object');
@@ -253,9 +264,9 @@
                     input1.style.display = "inline-flex";
                     input2.style.display = "none";
                     input3.style.display = "none";
-                    document.getElementById("tab1").style.display="block";
-                    document.getElementById("tab2").style.display="none";
-                    document.getElementById("tab3").style.display="none";
+                    document.getElementById("tab1").style.display = "block";
+                    document.getElementById("tab2").style.display = "none";
+                    document.getElementById("tab3").style.display = "none";
                     break;
                 case 'image2':
                     imageDisplay.data = './images/SCR2.0 img 2.svg';
@@ -263,9 +274,9 @@
                     input1.style.display = "none";
                     input2.style.display = "inline-flex";
                     input3.style.display = "none";
-                    document.getElementById("tab2").style.display="block";
-                    document.getElementById("tab1").style.display="none";
-                    document.getElementById("tab3").style.display="none";
+                    document.getElementById("tab2").style.display = "block";
+                    document.getElementById("tab1").style.display = "none";
+                    document.getElementById("tab3").style.display = "none";
                     break;
                 case 'image3':
                     imageDisplay.data = './images/SCR2.0 img 3.svg';
@@ -273,9 +284,9 @@
                     input1.style.display = "none";
                     input2.style.display = "none";
                     input3.style.display = "inline-flex";
-                    document.getElementById("tab3").style.display="block";
-                    document.getElementById("tab1").style.display="none";
-                    document.getElementById("tab2").style.display="none";
+                    document.getElementById("tab3").style.display = "block";
+                    document.getElementById("tab1").style.display = "none";
+                    document.getElementById("tab2").style.display = "none";
                     break;
                 default:
                     imageDisplay.data = '';
@@ -321,23 +332,43 @@
                 alert("something went wrong");
             }
             svg1select1 = svgDoc.getElementById("voltage1");
+
             svg1select1.oninput = function () {
                 if (count_1 == 3) {
-                    voltage1 = svgDoc.getElementById('voltage1').value;
-                    svgDoc.getElementById("voltage-1-display").innerText = voltage1;
+                    if (bulb_1 === 1) {
+                        voltage1 = svgDoc.getElementById('voltage1').value;
+                        svgDoc.getElementById("voltage-1-display").innerText = voltage1;
+                        vbo_svg1 = svgDoc.getElementById("vbo_disp_svg1");
+                        vbo_svg1.innerHTML = voltage1;
+                        current_svg1 = svgDoc.getElementById("current_disp_svg1");
+                        current_svg1.innerHTML = (voltage1 / 318).toFixed(2);
+
+                    }
+
+                    else {
+                        alert("please complete the connections and turn on power")
+                    }
                 }
                 else {
-                    alert("please complete the conditions")
+                    alert("please complete the connections and turn on power")
                 }
             }
             svg1select2 = svgDoc.getElementById("voltage2");
+
             svg1select2.oninput = function () {
                 if (count_1 == 3) {
-                    voltage2 = svgDoc.getElementById('voltage2').value;
-                    svgDoc.getElementById("voltage-2-display").innerText = voltage2;
+                    if (bulb_1 === 1) {
+                        gatecurr_svg1 = svgDoc.getElementById("ig_display_svg1");
+                        voltage2 = svgDoc.getElementById('voltage2').value;
+                        svgDoc.getElementById("voltage-2-display").innerText = voltage2;
+                        gatecurr_svg1.innerHTML = (voltage2 / 8);
+                    }
+                    else {
+                        alert("please complete the connections and turn on power")
+                    }
                 }
                 else {
-                    alert("please complete the connections")
+                    alert("please complete the connections and turn on power")
                 }
             }
 
@@ -407,24 +438,51 @@
 
             svg2select1 = svgDoc1.getElementById("voltage1_svg2");
             svg2select1.oninput = function () {
+
                 if (count_2 == 3) {
-                    voltage1_svg2 = svgDoc.getElementById('voltage1_svg2').value;
-                    svgDoc1.getElementById("voltage-1-display_svg2").innerText = voltage1_svg2;
+                    if (bulb_2 === 1) {
+                        voltage1_svg2 = svgDoc1.getElementById('voltage1_svg2').value;
+                        svgDoc1.getElementById("voltage-1-display_svg2").innerText = voltage1_svg2;
+                        vbo_svg2 = svgDoc1.getElementById('vbo_disp_svg2');
+                        vbo_svg2.innerHTML = voltage1_svg2;
+                        if (voltage1_svg2 <= 200) {
+                            current_svg2 = svgDoc1.getElementById('current_disp_svg2')
+                            current_svg2.innerHTML = (voltage1_svg2 / 700).toFixed(2);
+                        }
+                        else {
+                            current_svg2 = svgDoc1.getElementById('current_disp_svg2')
+                            current_svg2.innerHTML = (voltage1_svg2 / 15).toFixed(2);
+                        }
+
+                    }
+                    else {
+                        console.log(count_2)
+                        alert("please complete the connections and turn on the power.")
+                    }
                 }
                 else {
                     console.log(count_2)
-                    alert("please complete the conditions")
+                    alert("please complete the connections and turn on the power.")
                 }
             }
             svg2select2 = svgDoc1.getElementById("voltage2_svg2");
             svg2select2.oninput = function () {
+
                 if (count_2 == 3) {
-                    voltage2_svg2 = svgDoc.getElementById('voltage2_svg2').value;
-                    svgDoc1.getElementById("voltage-2-display_svg2").innerText = voltage2_svg2;
+                    if (bulb_2 === 1) {
+                        voltage2_svg2 = svgDoc.getElementById('voltage2_svg2').value;
+                        svgDoc1.getElementById("voltage-2-display_svg2").innerText = voltage2_svg2;
+                        gatecurr_svg2 = svgDoc1.getElementById('ig_disp_svg2')
+                        gatecurr_svg2.innerHTML = (voltage2_svg2 / 6).toFixed(2);
+                    }
+                    else {
+                        console.log(count_2)
+                        alert("please complete the connections and turn on the power.")
+                    }
                 }
                 else {
                     console.log(count_2)
-                    alert("please complete the connections")
+                    alert("please complete the connections and turn on the power.")
                 }
             }
 
@@ -486,27 +544,39 @@
                     alert("please complete the connections before 1")
                 }
             };
-
             svg3select1 = svgDoc2.getElementById("voltage1_svg3");
             svg3select1.oninput = function () {
                 if (count_3 === 5) {
-                    voltage1_svg3 = svgDoc2.getElementById('voltage1_svg3').value;
-                    svgDoc2.getElementById("voltage-1-display_svg3").innerText = voltage1_svg3;
+                    if (bulb_3 === 1) {
+                        voltage1_svg3 = svgDoc2.getElementById('voltage1_svg3').value;
+                        svgDoc2.getElementById("voltage-1-display_svg3").innerText = voltage1_svg3;
+                        vbo_svg3 = svgDoc2.getElementById('vbo_disp_svg3');
+                        vbo_svg3.innerHTML = voltage1_svg3;
+
+                        current_svg3 = svgDoc2.getElementById('current_disp_svg3');
+                        current_svg3.innerHTML = (voltage1_svg3 / 16.33).toFixed(2);
+                    }
+                    else {
+                        alert("please complete the connections and turn on the power")
+                    }
                 }
                 else {
-                    alert("please complete the conditions")
+                    alert("please complete the connnections and turn on the power")
                 }
             }
-            svg3select2 = svgDoc2.getElementById("voltage2_svg3");
-            svg3select2.oninput = function () {
-                if (count_3 == 5) {
-                    voltage2_svg3 = svgDoc2.getElementById('voltage2_svg3').value;
-                    svgDoc2.getElementById("voltage-2-display_svg3").innerText = voltage2_svg3;
-                }
-                else {
-                    alert("please complete the connections")
-                }
-            }
+
+            svgDoc2.getElementById("voltage2_svg3").diasbled = true;
+            // svg3select2.diasbled=true;
+            // svg3select2.oninput = function () {
+
+            //     if (count_3 == 5) {
+            //         voltage2_svg3 = svgDoc2.getElementById('voltage2_svg3').value;
+            //         svgDoc2.getElementById("voltage-2-display_svg3").innerText = voltage2_svg3;
+            //     }
+            //     else {
+            //         alert("please complete the connections")
+            //     }
+            // }
 
 
             svg3but1 = document.getElementById("svg3_load_var-res");
