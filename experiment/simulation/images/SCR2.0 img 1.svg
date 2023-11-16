@@ -1093,7 +1093,7 @@
 			C297.3,127.6,297.8,128.1,298.3,128.1z"/>
 	</g>
 	<rect x="288.1" y="79.1" class="st25" width="52.3" height="10.7"/>
-	<text transform="matrix(1 0 0 1 308.7321 86.4173)" class="st22 st97">0V</text>
+	<text transform="matrix(1 0 0 1 308.7321 86.4173)" class="st22 st97" id="vbo_disp_svg1">0V</text>
 </g>
 <g>
 	<g>
@@ -1130,7 +1130,7 @@
 		</g>
 	</g>
 	<rect x="518.2" y="203.8" class="st25" width="52.3" height="10.7"/>
-	<text transform="matrix(1 0 0 1 538.4873 211.119)" class="st22 st97">0A</text>
+	<text transform="matrix(1 0 0 1 538.4873 211.119)" class="st22 st97" id="current_disp_svg1">0A</text>
 </g>
 <g>
 	<g>
@@ -1223,6 +1223,6 @@
 <path class="st119" d="M257.7,392.7l0.1-26.8h121.8v28.2h123.8V231l-1,1.2c14.1-7.1,14.1-14.2,0-21.3v-60h-26"/>
 <path class="st119" d="M432.8,172.6H237.7v160.3h78v22.7l-0.2,0.3c14.1,7.1,14.1,14.2,0,21.3h0.8v15.5"/>
 <rect x="394" y="335.6" class="st112" width="85" height="51.3"/>
-<text transform="matrix(1 0 0 1 424.5001 367.6497)" class="st401 st113">0A</text>
+<text transform="matrix(1 0 0 1 424.5001 367.6497)" class="st401 st113" id="ig_display_svg1">0A</text>
 <text transform="matrix(1 0 0 1 380.4498 328.6019)" class="st401 st125">GATE CURRENT</text>
 </svg>
